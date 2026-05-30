@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PromptVault</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">PromptVault</span>
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn" id="btn-export" title="Export JSON">↑</button>
+        <button class="icon-btn" id="btn-import" title="Import JSON">↓</button>
+        <input type="file" id="import-file" accept=".json" style="display:none" />
+      </div>
+    </header>
+
+    <!-- Search & Filter -->
+    <div class="search-bar">
+      <span class="search-icon">⌕</span>
+      <input type="text" id="search-input" placeholder="Search prompts…" autocomplete="off" />
+      <button class="icon-btn clear-btn" id="clear-search" title="Clear">✕</button>
+    </div>
+
+    <!-- Tag filters -->
+    <div class="tag-strip" id="tag-strip"></div>
+
+    <!-- Stats bar -->
+    <div class="stats-bar" id="stats-bar">0 prompts</div>
+
+    <!-- Prompt list -->
+    <div class="prompt-list" id="prompt-list">
+      <div class="empty-state" id="empty-state">
+        <div class="empty-icon">📭</div>
+        <p>No prompts yet.</p>
+        <p class="empty-hint">Highlight text on any page,<br>right-click → <strong>Save as Prompt</strong></p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span id="footer-shortcut">Ctrl+Shift+S to save selection</span>
+    </footer>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
